@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" version="3.4.0" method="upgrade">
+	<name>TM Instagram</name>
+	<author>TemplateMonster</author>
+	<creationDate>13.06.2014</creationDate>
+	<copyright>Copyright (c) 2012-2015 by TemplateMonster - www.templatemonster.com</copyright>
+	<license>Licensed under the GNU/GPLv2:  http://www.opensource.org/licenses/mit-license.php</license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.templatemonster.com</authorUrl>
+	<version>1.0.1</version>
+	<description>MOD_TM_INSTAGRAM_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_tm_instagram">mod_tm_instagram.php</filename>
+        <folder>js</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>		
+		<filename>mod_tm_instagram.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tm_instagram.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tm_instagram.sys.ini</language>
+	</languages>   
+   
+	<config> 
+      <fields name="params">
+            <fieldset name="basic">
+            
+            
+                <field
+                    name="USER_NAME"
+                    type="text"
+                    label="MOD_TM_INSTAGRAM_USER_NAME"
+                    description="MOD_TM_INSTAGRAM_USER_NAME_DESC"
+                    default="template_monster"                
+                />
+                
+                <field
+                    name="AdminPhotoCount"
+                    type="text"
+                    label="MOD_TM_INSTAGRAM_PHOTO_COUNT"
+                    description="MOD_TM_INSTAGRAM_PHOTO_COUNT_DESC"
+                    default="5"                
+                />
+                              
+                <field
+                    name="CLIENT_ID"
+                    type="text"
+                    label="MOD_TM_INSTAGRAM_CLIENT_ID"
+                    description="MOD_TM_INSTAGRAM_CLIENT_ID_DESC"
+                    default="965ffa0762fc43ae93237b4c33a141d8"                
+                />                
+
+            </fieldset>
+            <fieldset
+				name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+					</fieldset>
+        </fields>    
+   </config>     
+           
+</extension>

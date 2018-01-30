@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+    <name>mod_articles_random</name>
+    <author>Cory Webb</author>
+    <creationDate>September 2016</creationDate>
+    <copyright>Copyright (C) 2016 Cory Webb. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>cory@corywebbmedia.com</authorEmail>
+    <authorUrl>www.corywebbmedia.com</authorUrl>
+    <version>0.0.2</version>
+    <description>MOD_ARTICLES_RANDOM_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_articles_random">mod_articles_random.php</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.mod_articles_random.ini</language>
+        <language tag="en-GB">en-GB.mod_articles_random.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="catid" type="category" label="JCATEGORY" description="MOD_ARTICLES_RANDOM_CATEGORY_DESC"
+                    extension="com_content" multiple="true" default="">
+                    <option value="">JOPTION_ALL_CATEGORIES</option>
+                </field>
+                <field name="count" type="text" default="5" label="MOD_ARTICLES_RANDOM_COUNT_LABEL"
+                    description="MOD_ARTICLES_RANDOM_COUNT_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

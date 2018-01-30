@@ -1,0 +1,14 @@
+/* CSS for admin module */
+
+/* Default view */
+
+.defaultadmin .links {font-size: 12px; }
+
+
+/* Bulleted view */
+
+.bulletadmin .ul {margin: 0; }
+
+.bulletadmin .li {font-size: 12px;}
+
+.bulletadmin .links {font-size: 12px;}

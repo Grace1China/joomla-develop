@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.5" method="upgrade" client="site">
+  <name>mod_piadmin</name>
+  <author>te-webdesign</author>
+  <creationDate>May 2011</creationDate>
+  <copyright>(C) 2010</copyright>
+  <license>GNU/GPL</license>
+  <authorEmail>paulkosciecha@googlemail.com</authorEmail>
+  <authorUrl>http://joomla.truthengaged.org.uk</authorUrl>
+  <version>4.0.0</version>
+  <description>MOD_PIADMIN_MODULE_DESCRIPTION</description>
+  <files>
+	<filename module="mod_piadmin">mod_piadmin.php</filename>
+	<filename>mod_piadmin.xml</filename>
+	<folder>assets</folder>
+	<folder>tmpl</folder>
+  </files>
+  <languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_piadmin.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_piadmin.sys.ini</language>
+	</languages>
+
+  <config>
+  <fields name="params">
+  <fieldset name="basic">
+  <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" /> 
+    <field name="message" class="btn-group" type="radio" default="1" label="MOD_PIADMIN_ADD_MES" description="MOD_PIADMIN_ADD_MES_DESC">
+      <option value="1">JYes</option>
+      <option value="0">JNo</option>
+    </field>
+    <field name="teacher" class="btn-group" type="radio" default="1" label="MOD_PIADMIN_ADD_TEACH" description="MOD_PIADMIN_ADD_TEACH_DESC">
+      <option value="1">JYes</option>
+      <option value="0">JNo</option>
+    </field>
+    <field name="series" class="btn-group" type="radio" default="1" label="MOD_PIADMIN_ADD_SERIES" description="MOD_PIADMIN_ADD_SERIES_DESC">
+      <option value="1">JYes</option>
+      <option value="0">JNo</option>
+    </field>
+    <field name="podcast" class="btn-group" type="radio" default="1" label="MOD_PIADMIN_PUB_POD" description="MOD_PIADMIN_PUB_POD_DESC">
+      <option value="1">JYes</option>
+      <option value="0">JNo</option>
+    </field>
+    <field name="moduleclass_sfx" type="text" default="" label="MOD_PIADMIN_MODULE_CLASS_SFX" description="" />
+ </fieldset> 
+  </fields>
+  </config>
+  <!-- UPDATESERVER DEFINITION -->
+	<updateservers>
+		<server type="extension" priority="1" name="te-webdesign site">http://te-webdesign.org.uk/media/techangelog/feeds/mod_piadmin40.xml</server>
+	</updateservers>
+</extension>

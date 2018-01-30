@@ -1,0 +1,11 @@
+
+.lr_social_login_basic_150{	width:150px;background:transparent;}
+.lr_social_login_basic_150 #lr_providers .lr_icons_box{width:128px;float:left;margin:0 0 0px 0;}
+.lr_social_login_basic_150  #lr_providers .lr_icons_box div{float:left;margin:0 3px 4px 0;cursor:pointer;}
+.lr_social_login_basic_150 #lr_providers .lr_providericons { width: 60px; height: 26px; background-image: url('images/lr_provider_sprite.png'); cursor: pointer;
+  display: block; margin: 0 auto; position: relative; z-index: 9998; outline: 0;}
+/*icons sprite */
+.lr_social_login_basic_150 #lr_providers .lr_facebook:hover { width: 60px; height: 26px; background-position: 0px -78px; }
+.lr_social_login_basic_150 #lr_providers .lr_facebook { width: 60px; height: 26px; background-position: 0px -52px; }
+.lr_social_login_basic_150 #lr_providers .lr_google:hover { width: 60px; height: 26px; background-position: 0px -26px; }
+.lr_social_login_basic_150 #lr_providers .lr_google  { width: 60px; height: 26px; background-position: 0px 0px; }

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.4.0"
+	client="site"
+	method="upgrade">
+	<name>mod_articles_single</name>
+	<author>TemplateMonster</author>
+	<creationDate></creationDate>
+	<copyright>Copyright (c) 2012-2015 by TemplateMonster - www.templatemonster.com</copyright>
+	<license>Licensed under the GNU/GPLv2:  http://www.opensource.org/licenses/mit-license.php</license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.templatemonster.com</authorUrl>
+	<version>1.2.2</version>
+	<description>MOD_ARTICLES_SINGLE_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_articles_single">mod_articles_single.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_articles_single.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">languages/en-GB/en-GB.mod_articles_single.ini</language>
+		<language tag="en-GB">languages/en-GB/en-GB.mod_articles_single.sys.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_ARTICLES_NEWSFLASH" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic"
+				addfieldpath="/administrator/components/com_content/models/fields">
+
+				<field
+					name="article_id"
+					type="modal_article"
+					required="true"
+					edit="true"
+					clear="false"
+					label="MOD_ARTICLES_SINGLE_FIELD_ART_ID"
+					description="MOD_ARTICLES_SINGLE_FIELD_ART_ID_DESC"/>
+
+				<field
+					name="item_heading"
+					type="list"
+					default="h4"
+					label="MOD_ARTICLES_SINGLE_TITLE_HEADING"
+					description="MOD_ARTICLES_SINGLE_TITLE_HEADING_DESCRIPTION">
+					<option
+						value="h1">JH1</option>
+					<option
+						value="h2">JH2</option>
+					<option
+						value="h3">JH3</option>
+					<option
+						value="h4">JH4</option>
+					<option
+						value="h5">JH5</option>
+					<option
+						value="h6">JH6</option>
+				</field>
+
+				<field
+					name="item_title"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_ARTICLES_SINGLE_FIELD_TITLE_LABEL"
+					description="MOD_ARTICLES_SINGLE_FIELD_TITLE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="link_titles"
+					type="radio"
+					class="btn-group"
+					label="MOD_ARTICLES_SINGLE_FIELD_LINKTITLE_LABEL"
+					description="MOD_ARTICLES_SINGLE_FIELD_LINKTITLE_DESC">
+					<option
+						value="">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+
+				<field
+					name="published_on"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_ARTICLES_SINGLE_PUBLISHED_DATE_LABEL"
+					description="MOD_ARTICLES_SINGLE_PUBLISHED_DATE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="show_intro_image"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="MOD_ARTICLES_SINGLE_SHOW_INTRO_IMAGE"
+					description="MOD_ARTICLES_SINGLE_SHOW_INTRO_IMAGE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="readmore"
+					type="radio"
+					default="0"
+					class="btn-group"
+					label="MOD_ARTICLES_SINGLE_FIELD_READMORE_LABEL"
+					description="MOD_ARTICLES_SINGLE_FIELD_READMORE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+
+				<field
+					name="mod_button"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_ARTICLES_SINGLE_FIELD_CUSTOM_LINK_LABEL"
+					description="MOD_ARTICLES_SINGLE_FIELD_CUSTOM_LINK_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					type="text"
+					name="custom_link_title"
+					default=""
+					label="MOD_ARTICLES_SINGLE_FIELD_CUSTOM_LINK_TITLE_LABEL"
+					>				
+				</field>
+
+				<field
+					name="custom_link_route"
+					type="list"
+					class="btn-group"
+					default="0"
+					label="MOD_ARTICLES_SINGLE_ADV_FIELD_CUSTOM_LINK_ROUTE_LABEL"
+					description="MOD_ARTICLES_SINGLE_ADV_FIELD_CUSTOM_LINK_ROUTE_DESC">
+						<option	value="0">URL</option>
+						<option	value="1">Menu item</option>
+				</field>
+
+				<field
+					type="text"
+					name="custom_link_url"
+					default="http://"
+					label="MOD_ARTICLES_SINGLE_FIELD_CUSTOM_LINK_URL_LABEL"
+					>				
+				</field>
+
+				<field
+					type="menuitem"
+					name="custom_link_menu"
+					label="MOD_ARTICLES_SINGLE_FIELD_CUSTOM_LINK_MENU_LABEL">
+				</field>
+
+
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

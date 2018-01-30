@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.4.0"
+	client="site"
+	method="upgrade">
+	<name>mod_caroufredsel</name>
+	<author>TemplateMonster</author>
+	<creationDate>April 2013</creationDate>
+	<copyright>Copyright (c) 2012-2015 by TemplateMonster - www.templatemonster.com</copyright>
+	<license>Licensed under the GNU/GPLv2:  http://www.opensource.org/licenses/mit-license.php</license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.templatemonster.com</authorUrl>
+	<version>1.2.3</version>
+	<description>MOD_CAROUFREDSEL_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_caroufredsel">mod_caroufredsel.php</filename>
+		<folder>tmpl</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_caroufredsel.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_caroufredsel.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_caroufredsel.sys.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_ARTICLES_NEWSFLASH" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="catid"
+					type="category"
+					extension="com_content"
+					multiple="true"
+					default=""
+					size="10"
+					label="JCATEGORY"
+					description="MOD_CAROUFREDSEL_FIELD_CATEGORY_DESC" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+				<field
+					name="image"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_CAROUFREDSEL_FIELD_IMAGES_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_IMAGES_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="item_title"
+					type="radio"
+					default="0"
+					class="btn-group"
+					label="MOD_CAROUFREDSEL_FIELD_TITLE_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_TITLE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="link_titles"
+					type="radio"
+					class="btn-group"
+					label="MOD_CAROUFREDSEL_FIELD_LINKTITLE_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_LINKTITLE_DESC">
+					<option
+						value="">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+
+				<field
+					name="published"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_CAROUFREDSEL_FIELD_PUBLISHED_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_PUBLISHED_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="item_heading"
+					type="list"
+					default="h4"
+					label="MOD_CAROUFREDSEL_TITLE_HEADING"
+					description="MOD_CAROUFREDSEL_TITLE_HEADING_DESCRIPTION">
+					<option
+						value="h1">JH1</option>
+					<option
+						value="h2">JH2</option>
+					<option
+						value="h3">JH3</option>
+					<option
+						value="h4">JH4</option>
+					<option
+						value="h5">JH5</option>
+					<option
+						value="h6">JH6</option>
+				</field>
+
+			<field name="show_tags" type="radio"
+				class="btn-group"
+				default="0"
+				label="MOD_CAROUFREDSEL_FIELD_SHOW_TAGS_LABEL"
+				description="MOD_CAROUFREDSEL_FIELD_SHOW_TAGS_DESC"
+				labelclass="control-label"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+
+				<field
+					name="intro_image"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_CAROUFREDSEL_FIELD_INTRO_IMAGES_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_INTRO_IMAGES_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="intro_image_align"
+					type="radio"
+					class="btn-group"
+					default="none"
+					label="MOD_CAROUFREDSEL_FIELD_INTRO_IMAGES_ALIGN_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_INTRO_IMAGES_ALIGN_DESC">
+					<option
+						value="none">None</option>
+					<option
+						value="left">left</option>
+					<option
+						value="right">right</option>
+				</field>
+
+
+				<!-- <field
+					name="showLastSeparator"
+					type="radio"
+					default="1"
+					label="MOD_CAROUFREDSEL_FIELD_SEPARATOR_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_SEPARATOR_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field> -->
+
+				<field
+					name="readmore"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_CAROUFREDSEL_FIELD_READMORE_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_READMORE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="count"
+					type="text"
+					default="5"
+					label="MOD_CAROUFREDSEL_FIELD_ITEMS_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_ITEMS_DESC" />
+
+				<field
+					name="ordering"
+					type="list"
+					default="a.publish_up"
+					label="MOD_CAROUFREDSEL_FIELD_ORDERING_LABEL"
+					description="MOD_CAROUFREDSEL_FIELD_ORDERING_DESC">
+					<option
+						value="a.publish_up">MOD_CAROUFREDSEL_FIELD_ORDERING_PUBLISHED_DATE</option>
+					<option
+						value="a.created">MOD_CAROUFREDSEL_FIELD_ORDERING_CREATED_DATE</option>
+					<option
+						value="a.ordering">MOD_CAROUFREDSEL_FIELD_ORDERING_ORDERING</option>
+					<option
+						value="rand()">MOD_CAROUFREDSEL_FIELD_ORDERING_RANDOM</option>
+				</field>
+
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+
+			</fieldset>
+
+			<fieldset
+				name="CAROUFREDSEL">
+
+				<field type="spacer" label="MOD_CAROUFREDSEL_SPACER_GENERAL_LABEL" ></field>
+
+				<field
+					name="theme"
+					type="list"
+					default="0"
+					label="MOD_CAROUFREDSEL_THEME_LABEL"
+					description="MOD_CAROUFREDSEL_THEME_DESC">
+					<option value="0">
+						MOD_CAROUFREDSEL_DEFAULT
+					</option>
+					<option value="1">
+						MOD_CAROUFREDSEL_CUSTOM
+					</option>
+				</field>
+				
+				<field
+					name="script"
+					type="list"
+					default="0"
+					label="MOD_CAROUFREDSEL_SCRIPT_LABEL"
+					description="MOD_CAROUFREDSEL_SCRIPT_DESC">
+					<option value="0">
+						MOD_CAROUFREDSEL_DEFAULT
+					</option>
+					<option value="1">
+						MOD_CAROUFREDSEL_CUSTOM
+					</option>
+				</field>
+
+				<field
+					name="direction"
+					type="list"
+					default="left"
+					label="MOD_CAROUFREDSEL_DIRECTION_LABEL"
+					description="MOD_CAROUFREDSEL_DIRECTION_DESC">
+					<option	value="left">left</option>
+					<option	value="right">right</option>
+					<option	value="up">up</option>
+					<option	value="down">down</option>
+				</field>
+
+				<field type="spacer" label="MOD_CAROUFREDSEL_SPACER_ITEMS_LABEL" ></field>
+
+				<field
+					name="max_width"
+					type="text"
+					default="225"
+					label="MOD_CAROUFREDSEL_MAX_WIDTH_LABEL"
+					description="MOD_CAROUFREDSEL_MAX_WIDTH_DESC">
+				</field>
+
+				<field
+					name="max_items"
+					type="text"
+					default="5"
+					label="MOD_CAROUFREDSEL_MAX_ITEMS_LABEL"
+					description="MOD_CAROUFREDSEL_MAX_ITEMS_DESC">
+				</field>
+
+				<field
+					name="min_items"
+					type="text"
+					default="2"
+					label="MOD_CAROUFREDSEL_MIN_ITEMS_LABEL"
+					description="MOD_CAROUFREDSEL_MIN_ITEMS_DESC">
+				</field>
+
+				<field type="spacer" label="MOD_CAROUFREDSEL_SPACER_ANIMATION_LABEL" ></field>
+
+				<field
+					name="fx"
+					type="list"
+					default="scroll"
+					label="MOD_CAROUFREDSEL_SPACER_FX_LABEL"
+					description="MOD_CAROUFREDSEL_SPACER_FX_DESC">
+					<option	value="scroll">scroll</option>
+					<option	value="directscroll">directscroll</option>
+					<option	value="fade">fade</option>
+					<option	value="crossfade">crossfade</option>
+					<option	value="cover-fade">cover-fade</option>
+					<option	value="uncover-fade">uncover-fade</option>
+				</field>
+
+				<field
+					name="easing"
+					type="list"
+					default="swing"
+					label="MOD_CAROUFREDSEL_SPACER_EASING_LABEL"
+					description="MOD_CAROUFREDSEL_SPACER_EASING_DESC">
+					<option	value="linear">linear</option>
+					<option	value="swing">swing</option>
+					<option	value="quadratic">quadratic</option>
+					<option	value="cubic">cubic</option>
+				</field>
+
+				<field
+					name="duration"
+					type="text"
+					default="500"
+					label="MOD_CAROUFREDSEL_DURATION_ITEMS_LABEL"
+					description="MOD_CAROUFREDSEL_DURATION_ITEMS_DESC">
+				</field>
+
+				<field type="spacer" label="MOD_CAROUFREDSEL_SPACER_CONTROLS_LABEL" ></field>
+
+				<field
+					name="navigation"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="MOD_CAROUFREDSEL_NAV_LABEL"
+					description="MOD_CAROUFREDSEL_NAV_DESC">
+					<option value="0">MOD_CAROUFREDSEL_HIDE</option>
+					<option value="1">MOD_CAROUFREDSEL_SHOW</option>
+				</field>				
+
+				<field
+					name="pagination"
+					type="radio"
+					default="0"
+					class="btn-group"
+					label="MOD_CAROUFREDSEL_PAG_LABEL"
+					description="MOD_CAROUFREDSEL_PAG_DESC">
+					<option value="0">MOD_CAROUFREDSEL_HIDE</option>
+					<option value="1">MOD_CAROUFREDSEL_SHOW</option>
+				</field>
+				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

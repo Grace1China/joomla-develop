@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7" method="upgrade" client="site">
+	<name>mod_pitags</name>
+	<author>te-webdesign, Michael Leimer</author>
+	<creationDate>May 2011</creationDate>
+	<copyright>(C) 2010</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>paulkosciecha@googlemail.com</authorEmail>
+	<authorUrl>http://te-webdesign.org.uk/</authorUrl>
+	<version>4.0.1</version>
+	<description>MOD_PITAGS_DESCRIPTION</description>
+	<files>
+		<filename module="mod_pitags">mod_pitags.php</filename>
+		<filename>helper.php</filename>
+		<filename>mod_pitags.xml</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_pitags.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_pitags.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+	<field name="items" type="text" default="20" label="MOD_PITAGS_DISPLAY_NO" description="MOD_PITAGS_DISPLAY_NO_DESC" />
+	<field name="distribution" type="list" default="1" label="MOD_PITAGS_DISTRIBUTION" description="MOD_PITAGS_DISTRIBUTION_DESC">
+		<option value="0">MOD_PITAGS_DISTRIBUTION_LINEAR</option>
+		<option value="1">MOD_PITAGS_DISTRIBUTION_LOGARITHMIC</option>
+	</field>
+	<field name="threshold_count" type="text" default="1" label="MOD_PITAGS_THRESHOLD_COUNT" description="MOD_PITAGS_THRESHOLD_COUNT_DESC" />
+	<field name="buckets" type="text" default="0" label="MOD_PITAGS_BUCKETS" description="MOD_PITAGS_BUCKETS_DESC" />
+	<field name="orderby" type="list" default="0" label="MOD_PITAGS_ORDER">
+		<option value="0">MOD_PITAGS_RANDOM</option>
+		<option value="1">MOD_PITAGS_HIGH_TO_LOW</option>
+		<option value="2">MOD_PITAGS_LOW_TO_HIGH</option>
+		<option value="3">MOD_PITAGS_ORDER_ALPHA_DESC</option>
+		<option value="4">MOD_PITAGS_ORDER_ALPHA_ASC</option>
+    </field>
+	<field name="min" type="text" default="8" label="MOD_PITAGS_MIN" description="MOD_PITAGS_MIN_DESC" />
+	<field name="max" type="text" default="24" label="MOD_PITAGS_MAX" description="MOD_PITAGS_MAX_DESC" />
+	<field name="unit" type="list" default="px" label="MOD_PITAGS_UNIT" description="MOD_PITAGS_UNIT_DESC">
+		<option value="px">MOD_PITAGS_UNIT_PX</option>
+		<option value="pt">MOD_PITAGS_UNIT_PT</option>
+		<option value="em">MOD_PITAGS_UNIT_EM</option>
+		<option value="%">MOD_PITAGS_UNIT_PC</option>
+    </field>
+    <field name="linktags" class="btn-group" type="radio" default="0" label="COM_PREACHIT_TEMP_PARAMS_TAGLINKS_TITLE" 
+	description="COM_PREACHIT_TEMP_PARAMS_TAGLINKS_DESC"> 
+		<option value="1">Jyes</option> 
+		<option value="0">Jno</option> </field>
+	<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+	<field name="moduleclass_sfx" type="text" default="" label="MOD_PITAGS_MODULE_CLASS_SFX" description="" />
+			</fieldset>
+		</fields>
+	</config>
+	<!-- UPDATESERVER DEFINITION -->
+	<updateservers>
+		<server type="extension" priority="1" name="te-webdesign site">http://te-webdesign.org.uk/media/techangelog/feeds/mod_pitags40.xml</server>
+	</updateservers>
+</extension>

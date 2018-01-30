@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7" method="upgrade" client="site">
+  <name>mod_preachit</name>
+  <author>te-webdesign</author>
+  <creationDate>May 2011</creationDate>
+  <copyright>(C) 2010</copyright>
+  <license>GNU/GPL</license>
+  <authorEmail>paulkosciecha@googlemail.com</authorEmail>
+  <authorUrl>http://joomla.truthengaged.org.uk</authorUrl>
+  <version>4.0.1</version>
+  <description>MOD_PREACHIT_MODULE_DESCRIPTION</description>
+  <files>
+	<filename module="mod_preachit">mod_preachit.php</filename>
+	<filename>helper.php</filename>
+	<filename>mod_preachit.xml</filename>
+	<folder>tmpl</folder>
+	<folder>assets</folder>
+  </files>
+  <languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_preachit.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_preachit.sys.ini</language>
+	</languages>
+
+  <config>
+	<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_preachit/models/fields">
+			<field name="spacer1" type="spacer" default="" label="MOD_PREACHIT_ITEM_OPTIONS"/>
+
+    <field name="items" type="list" default="2" label="MOD_PREACHIT_DISPLAY_NO" description="MOD_PREACHIT_DISPLAY_NO_DESC">
+    <option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option></field>
+	<field name="teachersel" class="btn-group" type="radio" default="0" label="COM_PREACHIT_MENU_PARAMS_TEACHER_SEL_TITLE" 
+	description="COM_PREACHIT_MENU_PARAMS_TEACHER_SEL_DESC"> 
+		<option value="0">PIAll</option> 
+		<option value="1">TEINCLUSIVE</option>
+		<option value="2">TEEXCLUSIVE</option> </field> 
+<field name="teacherselect" type="teacherlist" default="" multiple="true" size="10" label="COM_PREACHIT_MENU_PARAMS_TEACHER_SELECTION"
+	extra="2">
+		</field>
+<field name="seriessel" class="btn-group" type="radio" default="0" label="COM_PREACHIT_MENU_PARAMS_SERIES_SEL_TITLE" 
+	description="COM_PREACHIT_MENU_PARAMS_SERIES_SEL_DESC"> 
+		<option value="0">PIAll</option> 
+		<option value="1">TEINCLUSIVE</option>
+		<option value="2">TEEXCLUSIVE</option> </field> 
+<field name="seriesselect" type="telist" default="" multiple="true" size="10" label="COM_PREACHIT_MENU_PARAMS_SERIES_SELECTION"
+	return="id" display="series_name" table="piseries" extra="2">
+		</field>
+<field name="ministrysel" class="btn-group" type="radio" default="0" label="COM_PREACHIT_MENU_PARAMS_MINISTRY_SEL_TITLE" 
+	description="COM_PREACHIT_MENU_PARAMS_MINISTRY_SEL_DESC"> 
+		<option value="0">PIAll</option> 
+		<option value="1">TEINCLUSIVE</option>
+		<option value="2">TEEXCLUSIVE</option> </field> 
+<field name="ministryselect" type="telist" default="" multiple="true" size="5" label="COM_PREACHIT_MENU_PARAMS_MINISTRY_SELECTION"
+	return="id" display="ministry_name" table="piministry" extra="2">
+		</field>
+    <field name="orderby" type="list" default="0" label="MOD_PREACHIT_ORDER">
+      <option value="0">MOD_PREACHIT_ORDER_DATE</option>
+      <option value="1">MOD_PREACHIT_ORDER_DATE_ADDED</option>
+      <option value="2">MOD_PREACHIT_ORDER_HITS</option>
+      <option value="3">MOD_PREACHIT_ORDER_DOWNLOADS</option>
+    </field>
+    <field name="spacer1a" type="spacer" default="" label="MOD_PREACHIT_DISPLAY_OPTIONS"/>
+    <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />
+    <field name="date_format" type="list" default="" label="MOD_PREACHIT_DATE_FORMAT" decription="MOD_PREACHIT_DATE_FORMAT_DESC"> 
+	<option value="">Default</option> 
+<option value="Y-m-d">2010-12-25</option> 
+<option value="m-d-Y">12-25-2010</option> 
+<option value="d-m-Y">25-12-2010</option> 
+<option value="M d, Y">Dec 25, 2010</option> 
+<option value="D, M d, Y">Sat, Dec 25, 2010</option> 
+<option value="M d">Dec 25</option> 
+<option value="F d, Y">December 25, 2010</option> 
+<option value="l, F d, Y">Saturday, December 25, 2010</option> </field> 
+
+<field name="spacer2" type="spacer" default="" label="MOD_PREACHIT_LINK_OPTIONS"/>
+  	<field name="titlelink" class="btn-group" type="radio" default="1" label="MOD_PREACHIT_LINK_TITLE" description="MOD_PREACHIT_LINK_TITLE_DESC">
+  		<option value="1">JYes</option>
+     	 <option value="0">JNo</option>
+    	</field>
+   	 <field name="medialinks" class="btn-group" type="radio" default="0" label="MOD_PREACHIT_LINKS" description="MOD_PREACHIT_LINKS_DESC">
+   	 	 <option value="1">JYes</option>
+      	<option value="0">JNo</option>
+   	 </field>
+   	<field name="showall" class="btn-group" type="radio" default="0" label="MOD_PREACHIT_SHOW_ALL_TITLE" description="MOD_PREACHIT_SHOW_ALL_DESC">
+   	 	 <option value="1">JYes</option>
+      	<option value="0">JNo</option>
+   	 </field>
+   	 <field name="spacer3" type="spacer" default="" label="MOD_PREACHIT_INFO_OPTIONS"/>
+   	 <field name="namelength" type="text" size="3" maxlength="5" default="" label="MOD_PREACHIT_MODULE_LENGTH" description="MOD_PREACHIT_MODULE_LENGTH_DESC" />
+   	 <field name="teacher" class="btn-group" type="radio" default="1" label="MOD_PREACHIT_TEACHER" description="MOD_PREACHIT_TEACHER_DESC">
+   	 	<option value="1">JYes</option>
+      	<option value="0">JNo</option>
+    	</field>
+    	<field name="series" class="btn-group" type="radio" default="1" label="MOD_PREACHIT_SERIES" description="MOD_PREACHIT_SERIES_DESC">
+   	 	<option value="1">JYes</option>
+      	<option value="0">JNo</option>
+    	</field>
+    <field name="scripture" class="btn-group" type="radio" default="0" label="MOD_PREACHIT_SCRIPTURE" description="MOD_PREACHIT_SCRIPTURE_DESC">
+    	<option value="1">JYes</option>
+      <option value="0">JNo</option>
+    </field>
+    <field name="date" class="btn-group" type="radio" default="0" label="MOD_PREACHIT_DATE" description="MOD_PREACHIT_DATE_DESC">
+    	<option value="1">JYes</option>
+      <option value="0">JNo</option>
+    </field>
+    <field name="listimage" type="list" default="1" label="MOD_PREACHIT_TEMP_PARAMS_MLIMAGE_TITLE" description="MOD_PREACHIT_TEMP_PARAMS_MLIMAGE_DESC">
+		<option value="1">COM_PREACHIT_ADMIN_DD_NONE</option> 
+		<option value="2">COM_PREACHIT_ADMIN_DD_TEACHER</option> 
+		<option value="3">COM_PREACHIT_ADMIN_DD_SERIES</option>
+		<option value="4">COM_PREACHIT_ADMIN_DD_MESSAGE</option>
+	</field>
+</fieldset>
+<fieldset name="Advanced">
+    <field name="moduleclass_sfx" type="text" default="" label="MOD_PREACHIT_MODULE_CLASS_SFX" description="" />
+	</fieldset>  
+  </fields>
+  </config>
+  <!-- UPDATESERVER DEFINITION -->
+	 <updateservers>
+		<server type="extension" priority="1" name="te-webdesign site">http://te-webdesign.org.uk/media/techangelog/feeds/mod_preachit40.xml</server>
+	</updateservers>
+</extension>

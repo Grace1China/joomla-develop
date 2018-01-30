@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>SW Pinterest Display</name>
+	<author>Muhammad Riduan</author>
+	<creationDate>October, 2013</creationDate>
+	<copyright>Copyright - Social Widgets</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>admin@socialwidgets.net</authorEmail>
+	<authorUrl>http://socialwidgets.net/</authorUrl>
+	<version>1.0</version>
+	<description>Thanks for installing SW Pinterest Display</description> 
+	<files>
+		<folder>tmpl</folder>
+		<filename module="mod_sw_pinterestDisplay">mod_sw_pinterestDisplay.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_sw_pinterestDisplay.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="select"
+					type="list"
+					default="board"
+					label="Select an option"
+					description="You can switch between either profile widget or board widget">
+					<option value="profile">Profile Widget</option>
+					<option value="board">Board Widget</option>
+				</field>
+				<field 
+					name="pinterest"
+					type="text"
+					default="pinterest/pin-pets"
+					label="Pinterest Username" 
+					description="Your Pinterest Username will be here" />
+				<field
+					name="width"
+					type="text"
+					default="350"
+					label="Width"
+					description="Width of your module in px" />
+				<field
+					name="height"
+					type="text"
+					default="400"
+					label="Height"
+					description="Height of your module in px" />
+				<field
+					name="scale"
+					type="text"
+					default="92"
+					label="Image Width"
+					description="in px" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					default=""
+					label="Module Suffix"
+					description="Module Suffix" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.0"
+	client="site"
+	method="upgrade">
+    <name>IceMegaMenu Module</name>
+    <creationDate>March 2011</creationDate>
+    <author>IceTheme</author>
+    <copyright>GNU / GPL</copyright>
+    <authorEmail>info@icetheme.com</authorEmail>
+    <authorUrl>http://www.icetheme.com</authorUrl>
+    <version>3.0.1</version>
+	<description>IceMegaMenu extension is a powerful Joomla (module + plugin) to help you take the most from the navigation system. Top features includes ability to split dropdown columns, option to load modules inside the dropdown, works without JavaScript and much more.</description>
+     <files>
+         <filename module="mod_icemegamenu">mod_icemegamenu.php</filename>
+         <filename module="mod_icemegamenu">helper.php</filename>
+		 <filename module="mod_icemegamenu">index.html</filename>
+         <folder module="mod_icemegamenu">libs</folder>
+		  <folder module="mod_icemegamenu">assets</folder>
+         <folder module="mod_icemegamenu">tmpl</folder>
+		 <folder module="mod_icemegamenu">themes</folder>
+    </files>
+	<languages>
+		<language tag="en-GB">languages/en-GB/en-GB.mod_icemegamenu.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_MEGA_MENU" />
+<config>
+	<fields name="params"> 
+	<fieldset name="basic" label="ICEMEGAMENU_LABEL" addfieldpath="/modules/mod_icemegamenu/libs/elements">
+	
+		
+	   <field name="theme_style" type="folderlist" hide_none="true" label="SELECT_THEME" description="SELECT_THEME_DESC" default=""  directory="modules/mod_icemegamenu/themes" filter="" exclude="item" stripext="" />
+		
+		<field name="vertical_direction" type="list" default="1" label="Dropdown Direction (vertical theme)" description="What direction would you like to display the dropdown (applicable only for VERTICAL theme)" >
+			<option value="left">Left</option>
+			<option value="right">Right</option>
+		</field>
+				
+				
+	 <field name="spacer11" type="spacer" class="text" label="" />
+	 <field name="spacer1" type="spacer" class="text" label="SPACER_1" />
+				
+
+       <field
+                    name="menutype"
+                    type="menu"
+                    label="MENU_NAME"
+                    description="MENU_NAME_DESC" />
+		
+		<field
+                    name="startLevel"
+                    type="list"
+                    default="1"
+                    label="START_LEVEL"
+                    description="START_LEVEL_DESC" 
+                >
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                    <option value="6">J6</option>
+                    <option value="7">J7</option>
+                    <option value="8">J8</option>
+                    <option value="9">J9</option>
+                    <option value="10">J10</option>
+                </field>
+
+                <field
+                    name="endLevel"
+                    type="list"
+                    default="0"
+                    label="END_LEVEL"
+                    description="END_LEVEL_DESC" 
+                    >
+                    <option value="0">JALL</option>
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                    <option value="6">J6</option>
+                    <option value="7">J7</option>
+                    <option value="8">J8</option>
+                    <option value="9">J9</option>
+                    <option value="10">J10</option>
+                </field>
+				
+		<field name="showAllChildren" type="radio" class="btn-group" default="1" label="ALWAYS_SHOW_SUB_MENU_ITEMS_LABEL" description="SHOW_SUB_MENU_ITEMS">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+
+		</field>
+
+		<field name="resizable_menu" type="radio" class="btn-group" default="1" label="RESIZABLE_MENU" description="RESIZABLE_MENU_DESC">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+
+		</field>
+		
+			<field name="" type="spacer" default="" label="" description="" />
+			<field name="" type="spacer" default="" label="" description="" />		
+		
+		<field name="class_sfx" type="text" default="" label="MENU_CLASS_SUFFIX" description="MENU_CLASS_SUFFIX_DESC" />
+
+		<field name="window_open" type="hidden" default="" label="TARGET_POSITION" description="TARGET_POSITION_DESC"  />	
+		<field name="tag_id" type="text" default="" label="MENU_TAG_ID" description="MENU_TAG_ID_DESC" />
+
+	</fieldset>
+	
+	<fieldset name="advanced" lable="Advanced Parameters">
+		<field name="moduleclass_sfx" type="text" default="" label="MODULE_CLASS_SUFFIX" description="MODULE_CLASS_SUFFIX_DESC" />
+		
+			<field name="" type="spacer" default="" label="" description="" />
+			<field name="" type="spacer" default="" label="" description="" />		
+		<field name="cache" type="list" default="1" label="Caching" description="CACHING_DESC">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</field>
+		<field name="cache_time" type="text" default="30" label="CACHE_TIME" description="CACHE_TIME_DESC" />
+        <field name="enable_bootrap" type="list" default="0"  class="btn-group" label="ENABLE_BOOTSTRAP" description="ENABLE_BOOTSTRAP_DESC">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+			<field name="" type="spacer" default="" label="" description="" />
+			<field name="" type="spacer" default="" label="" description="" />		
+	</fieldset>
+
+</fields>	
+</config>
+</extension>

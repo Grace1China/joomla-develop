@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4.0" client="site" method="install">
+	<name>mod_tm_ajax_contact_form</name>
+	<author>TemplateMonster</author>
+	<creationDate>August ,2014</creationDate>
+	<copyright>Copyright (c) 2012-2015 by TemplateMonster - www.templatemonster.com</copyright>
+	<license>Licensed under the GNU/GPLv2:  http://www.opensource.org/licenses/mit-license.php</license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.templatemonster.com</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_TM_AJAX_CONTACT_FORM_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_tm_ajax_contact_form">mod_tm_ajax_contact_form.php</filename>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_tm_ajax_contact_form.xml</filename>
+		<filename>recaptchalib.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tm_ajax_contact_form.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tm_ajax_contact_form.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset 
+				name="module_settings" 
+				label="MOD_TM_AJAX_CONTACT_FORM_MODULE_SETTINGS">
+
+				<field
+					type="textarea"
+					name="pretext"
+					rows="5"
+					cols="5"
+					label="MOD_TM_AJAX_CONTACT_FORM_PRETEXT_LABEL"
+					description="MOD_TM_AJAX_CONTACT_FORM_PRETEXT_DESC">
+				</field>
+
+				<field 
+					name="email_req" 
+					type="radio" 
+					class="btn-group" 
+					default="required" 
+					label="JGLOBAL_EMAIL" 
+				>
+					<option	value="0">JUNPUBLISHED</option>
+					<option	value="1">JPUBLISHED</option>
+					<option	value="required">JREQUIRED</option>
+				</field>
+				<field 
+					name="phone_req" 
+					type="radio" 
+					class="btn-group" 
+					default="required" 
+					label="MOD_TM_AJAX_CONTACT_FORM_PHONE_LABEL" 
+				>
+					<option	value="0">JUNPUBLISHED</option>
+					<option	value="1">JPUBLISHED</option>
+					<option	value="required">JREQUIRED</option>
+				</field>
+				<field 
+					name="website_req" 
+					type="radio" 
+					class="btn-group" 
+					default="required" 
+					label="MOD_TM_AJAX_CONTACT_FORM_WEBSITE_LABEL"
+				>
+					<option	value="0">JUNPUBLISHED</option>
+					<option	value="1">JPUBLISHED</option>
+					<option	value="required">JREQUIRED</option>
+				</field>
+				<field 
+					name="subject_publish" 
+					type="radio" 
+					class="btn-group" 
+					default="1" 
+					label="MOD_TM_AJAX_CONTACT_FORM_SUBJECT_LABEL" 
+				>
+					<option	value="0">JUNPUBLISHED</option>
+					<option	value="1">JPUBLISHED</option>
+					<option	value="required">JREQUIRED</option>
+				</field>
+				<field 
+					name="subject_type" 
+					type="radio" 
+					class="btn-group" 
+					default="1" 
+					label="MOD_TM_AJAX_CONTACT_FORM_SUBJECT_TYPE_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_SUBJECT_TYPE_DESC"
+				>
+					<option	value="1">Dropdown</option>
+					<option	value="0">Textbox</option>
+				</field>
+				<field 
+					name="admin_email" 
+					type="text" 
+					label="MOD_TM_AJAX_CONTACT_FORM_ADMIN_EMAIL_LABEL" 
+					default=""
+					required="true" />
+				<field 
+					name="cc_email" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_CC_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_CC_LABEL" 
+					default="" />
+				<field 
+					name="bcc_email" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_BCC_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_BCC_LABEL"
+					default="" />
+				<field 
+					name="success_notify" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_SUCCESS_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_SUCCESS_LABEL" 
+					default="Thank You! Your message has been sent." />
+				<field 
+					name="failure_notify"
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_ERROR_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_ERROR_LABEL" 
+					default="Something went wrong, please try again later." />
+				<field 
+					name="recaptcha_failure_notify" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_ERROR_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_ERROR_LABEL" 
+					default="Please enter a correct Captcha answer." />
+				<field 
+					name="msg_minlength" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_MINLENGTH_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_MINLENGTH_LABEL" 
+					default="0" />
+				
+				<field 
+					name="errors_position" 
+					type="list" 
+					class="btn-group" 
+					default="right-top" 
+					description="MOD_TM_AJAX_CONTACT_FORM_ERRORS_POS_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_ERRORS_POS_LABEL"
+				>
+					<option	value="top-left">top-left</option>
+					<option	value="top-center">top-center</option>
+					<option	value="top-right">top-right</option>
+					<option	value="right-top">right-top</option>
+					<option	value="right-center">right-center</option>
+					<option	value="right-bottom">right-bottom</option>
+					<option	value="bottom-right">bottom-right</option>
+					<option	value="bottom-center">bottom-center</option>
+					<option	value="bottom-left">bottom-left</option>
+					<option	value="left-bottom">left-bottom</option>
+					<option	value="left-center">left-center</option>
+					<option	value="left-top">left-top</option>
+				</field>
+
+				<field 
+					type="spacer" 
+					name="myspacer" 
+					label="MOD_TM_AJAX_CONTACT_FORM_CAPTHA_KEYS" />			
+				<field 
+					name="captcha_req" 
+					type="radio" 
+					class="btn-group" 
+					default="0" 
+					label="MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_DESC">
+					<option	value="1">JREQUIRED</option>
+					<option	value="0">MOD_TM_AJAX_CONTACT_FORM_NOT_JREQUIRED</option>
+				</field>
+				<field 
+					name="public_key" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_PUB_KEY_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_PUB_KEY_LABEL" 
+					default="" />
+				<field 
+					name="private_key" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_PRIV_KEY_DESC" 
+					label="MOD_TM_AJAX_CONTACT_FORM_PRIV_KEY_LABEL" 
+					default="" />
+				<field 
+					name="captcha_theme" 
+					type="list" 
+					class="btn-group" 
+					default="red" 
+					label="MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_THEME_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_THEME_DESC"
+				>
+					<option	value="red">MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_RED_LABEL</option>
+					<option	value="white">MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_WHITE_LABEL</option>
+					<option	value="blackglass">MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_BLACK_LABEL</option>
+					<option	value="clean">MOD_TM_AJAX_CONTACT_FORM_CAPTCHA_CLEAN_LABEL</option>
+				</field>
+				<field 
+					name="reset_publish" 
+					type="radio" 
+					class="btn-group" 
+					default="1" 
+					label="MOD_TM_AJAX_CONTACT_FORM_RESET_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_RESET_DESC"
+				>
+					<option	value="1">JPUBLISHED</option>
+					<option	value="0">JUNPUBLISHED</option>
+				</field>
+				<field 
+					name="name_name" 
+					type="text" 
+					label="MOD_TM_AJAX_CONTACT_FORM_NAME_NAME_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_NAME_NAME_DESC" 
+					default="Name" />
+				<field 
+					name="email_name" 
+					type="text" 
+					label="MOD_TM_AJAX_CONTACT_FORM_EMAIL_NAME_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_EMAIL_NAME_DESC" 
+					default="Email" />
+				<field 
+					name="phone_name" 
+					type="text" 
+					label="MOD_TM_AJAX_CONTACT_FORM_PHONE_NAME_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_PHONE_NAME_DESC" 
+					default="Phone" />
+				<field 
+					name="website_name" 
+					type="text" 
+					label="MOD_TM_AJAX_CONTACT_FORM_WEBSITE_NAME_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_WEBSITE_NAME_DESC" 
+					default="Website" />
+				<field 
+					name="subject_name" 
+					type="text" 
+					label="MOD_TM_AJAX_CONTACT_FORM_SUBJECT_NAME_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_SUBJECT_NAME_DESC" 
+					default="Subject" />
+				<field 
+					name="message_name" 
+					type="text" 
+					label="MOD_TM_AJAX_CONTACT_FORM_MESSAGE_NAME_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_MESSAGE_NAME_DESC" 
+					default="Message" />
+				<field 
+					name="br_name" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_RESET_NAME_LABEL" 
+					label="MOD_TM_AJAX_CONTACT_FORM_RESET_NAME_DESC" 
+					default="Clear" />
+				<field 
+					name="bs_name" 
+					type="text" 
+					description="MOD_TM_AJAX_CONTACT_FORM_SUBMIT_NAME_LABEL" 
+					label="MOD_TM_AJAX_CONTACT_FORM_SUBMIT_NAME_DESC" 
+					default="Send" />
+				<field 
+					name="labels_pos" 
+					type="radio" 
+					class="btn-group" 
+					default="1" 
+					label="MOD_TM_AJAX_CONTACT_FORM_LABELS_POS_LABEL" 
+					description="MOD_TM_AJAX_CONTACT_FORM_LABELS_POS_DESC"
+				>
+					<option	value="1">MOD_TM_AJAX_CONTACT_FORM_INSIDE</option>
+					<option	value="0">MOD_TM_AJAX_CONTACT_FORM_OUTSIDE</option>
+				</field>
+			</fieldset>	
+			<fieldset 
+				name="advanced">
+				<field 
+					name="moduleclass_sfx" 
+					type="text" 
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" 
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

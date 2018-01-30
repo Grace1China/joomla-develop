@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.4.0"
+	client="site"
+	method="upgrade">
+	<name>mod_image_swoop</name>
+	<author>Template Monster</author>
+	<creationDate>September 2012</creationDate>
+	<copyright>Copyright (c) 2012-2015 by TemplateMonster - www.templatemonster.com </copyright>
+	<license>Licensed under the GNU/GPLv2:  http://www.opensource.org/licenses/mit-license.php</license> 
+	<authorEmail></authorEmail>
+	<authorUrl>www.templatemonster.com</authorUrl>
+	<version>1.2.5</version>
+	<description>MOD_IMAGE_SWOOP_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_image_swoop">mod_image_swoop.php</filename>
+		<folder>tmpl</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_image_swoop.xml</filename>
+	</files>
+	<updateservers>
+  	<server type="extension" priority="1" name="Image Swoop module Updates"><![CDATA[http://joomlacode.org/gf/project/tm_cam_slider/scmsvn/?action=browse&path=%2F%2Acheckout%2A%2Ftrunk%2Fextension.xml]]></server>
+	</updateservers>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_image_swoop.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_image_swoop.sys.ini</language>
+	</languages>	
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_ARTICLES_NEWSFLASH" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="catid"
+					type="category"
+					extension="com_content"
+					multiple="true"
+					default=""
+					size="10"
+					label="JCATEGORY"
+					description="MOD_IMAGE_SWOOP_FIELD_CATEGORY_DESC" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+				<field
+					name="image"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_IMAGE_SWOOP_FIELD_IMAGES_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_IMAGES_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="item_title"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_IMAGE_SWOOP_FIELD_TITLE_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_TITLE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="link_titles"
+					type="radio"
+					class="btn-group"
+					label="MOD_IMAGE_SWOOP_FIELD_LINKTITLE_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_LINKTITLE_DESC">
+					<option
+						value="">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">JNO</option>
+					<option
+						value="1">JYES</option>
+				</field>
+
+				<field
+					name="item_heading"
+					type="list"
+					default="h4"
+					label="MOD_IMAGE_SWOOP_TITLE_HEADING"
+					description="MOD_IMAGE_SWOOP_TITLE_HEADING_DESCRIPTION">
+					<option
+						value="h1">JH1</option>
+					<option
+						value="h2">JH2</option>
+					<option
+						value="h3">JH3</option>
+					<option
+						value="h4">JH4</option>
+					<option
+						value="h5">JH5</option>
+					<option
+						value="h6">JH6</option>
+				</field>
+
+				<!-- <field
+					name="showLastSeparator"
+					type="radio"
+					default="1"
+					label="MOD_IMAGE_SWOOP_FIELD_SEPARATOR_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_SEPARATOR_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field> -->
+				
+				<field
+					name="published"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_IMAGE_SWOOP_FIELD_PUBLISHED_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_PUBLISHED_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="readmore"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_IMAGE_SWOOP_FIELD_READMORE_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_READMORE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="count"
+					type="text"
+					default="5"
+					label="MOD_IMAGE_SWOOP_FIELD_ITEMS_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_ITEMS_DESC" />
+
+				<field
+					name="ordering"
+					type="list"
+					default="a.publish_up"
+					label="MOD_IMAGE_SWOOP_FIELD_ORDERING_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_ORDERING_DESC">
+					<option
+						value="a.publish_up">MOD_IMAGE_SWOOP_FIELD_ORDERING_PUBLISHED_DATE</option>
+					<option
+						value="a.created">MOD_IMAGE_SWOOP_FIELD_ORDERING_CREATED_DATE</option>
+					<option
+						value="a.ordering">MOD_IMAGE_SWOOP_FIELD_ORDERING_ORDERING</option>
+					<option
+						value="rand()">MOD_IMAGE_SWOOP_FIELD_ORDERING_RANDOM</option>
+				</field>
+
+				<field type="textarea" name="item_url" label="MOD_IMAGE_SWOOP_FIELD_ITEM_URL" description="MOD_IMAGE_SWOOP_FIELD_ITEM_URL_DESC" cols="40" rows="4"></field>
+
+				<field
+					name="target"
+					type="list"
+					default="self"
+					label="MOD_IMAGE_SWOOP_FIELD_TARGET_LABEL"
+					description="MOD_IMAGE_SWOOP_FIELD_TARGET_DESC">
+					<option	value="blank">blank</option>
+					<option	value="new">new</option>
+					<option	value="parent">parent</option>
+					<option	value="self">self</option>
+					<option	value="top">top</option>
+				</field>
+
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+
+			</fieldset>
+
+			<fieldset	name="SLIDESHOW">
+
+					<field name="load_easing" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_LOAD_EASING" description="MOD_IMAGE_SWOOP_LOAD_EASING_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="load_jquery_mobile" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_LOAD_JQERY_MOBILE" description="MOD_IMAGE_SWOOP_LOAD_JQERY_MOBILE_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+
+				<field type="spacer"/>
+				<field type="spacer" label="MOD_IMAGE_SWOOP_GENERAL" description=""/>
+
+					<field name="alignment" type="list" default="center" label="MOD_IMAGE_SWOOP_ALIGNEMENT" description="MOD_IMAGE_SWOOP_ALIGNEMENT_DESC">
+						<option value="center">center</option>
+						<option value="topLeft">topLeft</option>
+						<option value="topCenter">topCenter</option>
+						<option value="topRight">topRight</option>
+						<option value="centerLeft">centerLeft</option>
+						<option value="centerRight">centerRight</option>
+						<option value="bottomLeft">bottomLeft</option>
+						<option value="bottomLeft">bottomCenter</option>
+						<option value="bottomRight">bottomRight</option>
+					</field>
+
+					<field name="autoAdvance" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_SLIDESHOW_ADVANCE" description="MOD_IMAGE_SWOOP_SLIDESHOW_ADVANCE_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="mobileAutoAdvance" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_SLIDESHOW_MOBILE_ADVANCE" description="MOD_IMAGE_SWOOP_SLIDESHOW_MOBILE_ADVANCE_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="height" type="text" default="50%" label="MOD_IMAGE_SWOOP_HEIGHT" description="MOD_IMAGE_SWOOP_HEIGHT_DESC"/>
+
+					<field name="minHeight" type="text" default="200px" label="MOD_IMAGE_SWOOP_LOADER_MIN_HEIGHT" description="MOD_IMAGE_SWOOP_LOADER_MIN_HEIGHT_DESC"/>
+
+					<field name="imagePath" type="hidden" default="images/" label="MOD_IMAGE_SWOOP_IMAGE_PATH" description="MOD_IMAGE_SWOOP_IMAGE_PATH"/>
+
+					<field name="overlayer" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_OVERLAYER" description="MOD_IMAGE_SWOOP_OVERLAYER_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="pattern" type="list" default="1" label="MOD_IMAGE_SWOOP_PATTERN" description="MOD_IMAGE_SWOOP_PATTERN_DESC">
+						<option value="1">pattern_1</option>
+						<option value="2">pattern_2</option>
+						<option value="3">pattern_3</option>
+						<option value="4">pattern_4</option>
+						<option value="5">pattern_5</option>
+						<option value="6">pattern_6</option>
+						<option value="7">pattern_7</option>
+						<option value="8">pattern_8</option>
+						<option value="9">pattern_9</option>
+						<option value="10">pattern_10</option>
+					</field>
+
+					<field name="portrait" type="radio" class="btn-group" default="true" label="MOD_IMAGE_SWOOP_PORTRAIT" description="MOD_IMAGE_SWOOP_PORTRAIT_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+
+
+				<field type="spacer"/>
+				<field type="spacer" label="MOD_IMAGE_SWOOP_LOADING" description=""/>
+
+					<field name="loader" type="list" default="pie" label="MOD_IMAGE_SWOOP_LOADER" description="MOD_IMAGE_SWOOP_LOADER_DESC">
+						<option value="pie">pie</option>
+						<option value="bar">bar</option>
+						<option value="none">none</option>
+					</field>
+
+					<field name="pieDiameter" type="text" default="38" label="MOD_IMAGE_SWOOP_PIE_DIAMETER" description="MOD_IMAGE_SWOOP_PIE_DIAMETER_DESC"/>
+
+					<field name="piePosition" type="list" default="rightTop" label="MOD_IMAGE_SWOOP_PIE_POSITION" description="MOD_IMAGE_SWOOP_PIE_POSITION_DESC">
+						<option value="rightTop">rightTop</option>
+						<option value="leftTop">leftTop</option>
+						<option value="leftBottom">leftBottom</option>
+						<option value="rightBottom">rightBottom</option>
+					</field>
+
+					<field name="barDirection" type="list" default="leftToRight" label="MOD_IMAGE_SWOOP_BAR_DIRECTION" description="MOD_IMAGE_SWOOP_BAR_DIRECTION_DESC">
+						<option value="leftToRight">leftToRight</option>
+						<option value="rightToLeft">rightToLeft</option>
+						<option value="topToBottom">topToBottom</option>
+						<option value="bottomToTop">bottomToTop</option>
+					</field>
+
+					<field name="barPosition" type="list" default="bottom" label="MOD_IMAGE_SWOOP_BAR_POSITION" description="MOD_IMAGE_SWOOP_BAR_POSITION_DESC">
+						<option value="left">left</option>
+						<option value="top">top</option>
+						<option value="bottom">bottom</option>
+						<option value="right">right</option>
+					</field>
+
+					<field name="loaderColor" type="text" default="#eeeeee" label="MOD_IMAGE_SWOOP_LOADER_COLOR" description="MOD_IMAGE_SWOOP_LOADER_COLOR_DESC"/>
+					
+					<field name="loaderBgColor" type="text" default="#222222" label="MOD_IMAGE_SWOOP_LOADER_BG_COLOR" description="MOD_IMAGE_SWOOP_LOADER_COLOR_DESC"/>
+
+					<field name="loaderOpacity" type="text" default=".8" label="MOD_IMAGE_SWOOP_LOADER_OPACITY" description="MOD_IMAGE_SWOOP_LOADER_OPACITY_DESC"/>
+
+					<field name="loaderPadding" type="text" default="2" label="MOD_IMAGE_SWOOP_LOADER_PADDING" description="MOD_IMAGE_SWOOP_LOADER_PADDING_DESC"/>
+					<field name="loaderStroke" type="text" default="7" label="MOD_IMAGE_SWOOP_LOADER_STROKE" description="MOD_IMAGE_SWOOP_LOADER_STROKE_DESC"/>
+
+
+
+
+				<field type="spacer"/>
+				<field type="spacer" label="MOD_IMAGE_SWOOP_ANIMATION" description=""/>
+
+					<field name="cols" type="text" default="6" label="MOD_IMAGE_SWOOP_COLS" description="MOD_IMAGE_SWOOP_COLS_DESC"/>
+
+					<field name="rows" type="text" default="4" label="MOD_IMAGE_SWOOP_ROWS" description="MOD_IMAGE_SWOOP_ROWS_DESC"/>
+
+					<field name="slicedCols" type="text" default="6" label="MOD_IMAGE_SWOOP_SLICED_COLS" description="MOD_IMAGE_SWOOP_SLICED_COLS_DESC"/>
+
+					<field name="slicedRows" type="text" default="4" label="MOD_IMAGE_SWOOP_SLICED_ROWS" description="MOD_IMAGE_SWOOP_SLICED_ROWS_DESC"/>
+
+					<field name="easing" type="list" default="easeInOutExpo" label="MOD_IMAGE_SWOOP_EASING" description="MOD_IMAGE_SWOOP_EASING_DESC">
+						<option value="linear">linear</option>
+						<option value="swing">swing</option>
+						<option value="easeInQuad">easeInQuad</option>
+						<option value="easeOutQuad">easeOutQuad</option>
+						<option value="easeInOutQuad">easeInOutQuad</option>
+						<option value="easeInCubic">easeInCubic</option>
+						<option value="easeOutCubic">easeOutCubic</option>
+						<option value="easeInOutCubic">easeInOutCubic</option>
+						<option value="easeInQuart">easeInQuart</option>
+						<option value="easeOutQuart">easeOutQuart</option>
+						<option value="easeInOutQuart">easeInOutQuart</option>
+						<option value="easeInQuint">easeInQuint</option>
+						<option value="easeOutQuint">easeOutQuint</option>
+						<option value="easeInOutQuint">easeInOutQuint</option>
+						<option value="easeInSine">easeInSine</option>
+						<option value="easeOutSine">easeOutSine</option>
+						<option value="easeInOutSine">easeInOutSine</option>
+						<option value="easeInExpo">easeInExpo</option>
+						<option value="easeOutExpo">easeOutExpo</option>
+						<option value="easeInOutExpo">easeInOutExpo</option>
+						<option value="easeInCirc">easeInCirc</option>
+						<option value="easeOutCirc">easeOutCirc</option>
+						<option value="easeInOutCirc">easeInOutCirc</option>
+						<option value="easeInElastic">easeInElastic</option>
+						<option value="easeOutElastic">easeOutElastic</option>
+						<option value="easeInOutElastic">easeInOutElastic</option>
+						<option value="easeInBack">easeInBack</option>
+						<option value="easeOutBack">easeOutBack</option>
+						<option value="easeInOutBack">easeInOutBack</option>
+						<option value="easeInBounce">easeInBounce</option>
+						<option value="easeOutBounce">easeOutBounce</option>
+						<option value="easeInOutBounce">easeInOutBounce</option>
+					</field>
+
+					<field name="mobileEasing" type="list" default="easeInOutExpo" label="MOD_IMAGE_SWOOP_MOBILE_EASING" description="MOD_IMAGE_SWOOP_MOBILE_EASING_DESC">
+						<option value="linear">linear</option>
+						<option value="swing">swing</option>
+						<option value="easeInQuad">easeInQuad</option>
+						<option value="easeOutQuad">easeOutQuad</option>
+						<option value="easeInOutQuad">easeInOutQuad</option>
+						<option value="easeInCubic">easeInCubic</option>
+						<option value="easeOutCubic">easeOutCubic</option>
+						<option value="easeInOutCubic">easeInOutCubic</option>
+						<option value="easeInQuart">easeInQuart</option>
+						<option value="easeOutQuart">easeOutQuart</option>
+						<option value="easeInOutQuart">easeInOutQuart</option>
+						<option value="easeInQuint">easeInQuint</option>
+						<option value="easeOutQuint">easeOutQuint</option>
+						<option value="easeInOutQuint">easeInOutQuint</option>
+						<option value="easeInSine">easeInSine</option>
+						<option value="easeOutSine">easeOutSine</option>
+						<option value="easeInOutSine">easeInOutSine</option>
+						<option value="easeInExpo">easeInExpo</option>
+						<option value="easeOutExpo">easeOutExpo</option>
+						<option value="easeInOutExpo">easeInOutExpo</option>
+						<option value="easeInCirc">easeInCirc</option>
+						<option value="easeOutCirc">easeOutCirc</option>
+						<option value="easeInOutCirc">easeInOutCirc</option>
+						<option value="easeInElastic">easeInElastic</option>
+						<option value="easeOutElastic">easeOutElastic</option>
+						<option value="easeInOutElastic">easeInOutElastic</option>
+						<option value="easeInBack">easeInBack</option>
+						<option value="easeOutBack">easeOutBack</option>
+						<option value="easeInOutBack">easeInOutBack</option>
+						<option value="easeInBounce">easeInBounce</option>
+						<option value="easeOutBounce">easeOutBounce</option>
+						<option value="easeInOutBounce">easeInOutBounce</option>
+					</field> -->
+
+					<!--
+						Use text field if you want to input multiple FX animation values. Comment list below
+
+						<field name="fx" type="text" default="curtainTopLeft" label="MOD_IMAGE_SWOOP_FX" description="MOD_IMAGE_SWOOP_FX_DESC"/>-->
+
+					<field name="fx" type="list" default="random" label="MOD_IMAGE_SWOOP_FX" description="MOD_IMAGE_SWOOP_FX_DESC">
+						<option value="random">random</option>
+						<option value="simpleFade">simpleFade</option>
+						<option value="curtainTopLeft">curtainTopLeft</option>
+						<option value="curtainTopRight">curtainTopRight</option>
+						<option value="curtainBottomLeft">curtainBottomLeft</option>
+						<option value="curtainBottomRight">curtainBottomRight</option>
+						<option value="curtainSliceLeft">curtainSliceLeft</option>
+						<option value="curtainSliceRight">curtainSliceRight</option>
+						<option value="blindCurtainTopLeft">blindCurtainTopLeft</option>
+						<option value="blindCurtainTopRight">blindCurtainTopRight</option>
+						<option value="blindCurtainBottomLeft">blindCurtainBottomLeft</option>
+						<option value="blindCurtainBottomRight">blindCurtainBottomRight</option>
+						<option value="blindCurtainSliceBottom">blindCurtainSliceBottom</option>
+						<option value="blindCurtainSliceTop">blindCurtainSliceTop</option>
+						<option value="stampede">stampede</option>
+						<option value="mosaic">mosaic</option>
+						<option value="mosaicReverse">mosaicReverse</option>
+						<option value="mosaicRandom">mosaicRandom</option>
+						<option value="mosaicSpiral">mosaicSpiral</option>
+						<option value="mosaicSpiralReverse">mosaicSpiralReverse</option>
+						<option value="topLeftBottomRight">topLeftBottomRight</option>
+						<option value="bottomRightTopLeft">bottomRightTopLeft</option>
+						<option value="bottomLeftTopRight">bottomLeftTopRight</option>
+						<option value="bottomLeftTopRight">bottomLeftTopRight</option>
+					</field>
+
+					<field name="mobileFx" type="list" default="simpleFade" label="MOD_IMAGE_SWOOP_MOBILE_FX" description="MOD_IMAGE_SWOOP_MOBILE_FX_DESC">
+						<option value="random">random</option>
+						<option value="simpleFade">simpleFade</option>
+						<option value="curtainTopLeft">curtainTopLeft</option>
+						<option value="curtainTopRight">curtainTopRight</option>
+						<option value="curtainBottomLeft">curtainBottomLeft</option>
+						<option value="curtainBottomRight">curtainBottomRight</option>
+						<option value="curtainSliceLeft">curtainSliceLeft</option>
+						<option value="curtainSliceRight">curtainSliceRight</option>
+						<option value="blindCurtainTopLeft">blindCurtainTopLeft</option>
+						<option value="blindCurtainTopRight">blindCurtainTopRight</option>
+						<option value="blindCurtainBottomLeft">blindCurtainBottomLeft</option>
+						<option value="blindCurtainBottomRight">blindCurtainBottomRight</option>
+						<option value="blindCurtainSliceBottom">blindCurtainSliceBottom</option>
+						<option value="blindCurtainSliceTop">blindCurtainSliceTop</option>
+						<option value="stampede">stampede</option>
+						<option value="mosaic">mosaic</option>
+						<option value="mosaicReverse">mosaicReverse</option>
+						<option value="mosaicRandom">mosaicRandom</option>
+						<option value="mosaicSpiral">mosaicSpiral</option>
+						<option value="mosaicSpiralReverse">mosaicSpiralReverse</option>
+						<option value="topLeftBottomRight">topLeftBottomRight</option>
+						<option value="bottomRightTopLeft">bottomRightTopLeft</option>
+						<option value="bottomLeftTopRight">bottomLeftTopRight</option>
+						<option value="bottomLeftTopRight">bottomLeftTopRight</option>
+					</field>
+
+					<!--<field name="mobileFx" type="text" default="simpleFade" label="MOD_IMAGE_SWOOP_MOBILE_FX" description="MOD_IMAGE_SWOOP_MOBILE_FX_DESC"/> -->
+
+					<field name="gridDifference" type="text" default="250" label="MOD_IMAGE_SWOOP_GRID_DIFF" description="MOD_IMAGE_SWOOP_GRID_DIFF_DESC"/>
+
+					<field name="opacityOnGrid" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_OPACITY_ON_GRID" description="MOD_IMAGE_SWOOP_OPACITY_ON_GRID_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<!-- <field name="slideOn" type="list" default="random" label="MOD_IMAGE_SWOOP_SLIDE_ON" description="MOD_IMAGE_SWOOP_SLIDE_ON_DESC">
+						<option value="random">random</option>
+						<option value="next">next</option>
+						<option value="prev">prev</option>
+					</field> -->
+
+					<field name="time" type="text" default="7000" label="MOD_IMAGE_SWOOP_TIME" description="MOD_IMAGE_SWOOP_TIME_DESC"/>
+
+					<field name="transperiod" type="text" default="1500" label="MOD_IMAGE_SWOOP_TRANS_PERIOD" description="MOD_IMAGE_SWOOP_TRANS_PERIOD"/>	
+
+
+
+				<field type="spacer"/>
+				<field name="" type="spacer" label="MOD_IMAGE_SWOOP_NAVIGATION_SP" description=""/>
+
+					<field name="hover" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_HOVER" description="MOD_IMAGE_SWOOP_HOVER_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+	
+					<field name="navigation" type="radio" class="btn-group" default="true" label="MOD_IMAGE_SWOOP_NAVIGATION" description="MOD_IMAGE_SWOOP_NAVIGATION_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="navigationHover" type="radio" class="btn-group" default="true" label="MOD_IMAGE_SWOOP_NAV_ON_HOVER" description="MOD_IMAGE_SWOOP_NAV_ON_HOVER_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="mobileNavHover" type="radio" class="btn-group" default="true" label="MOD_IMAGE_SWOOP_MOBILE_NAV_HOVER" description="MOD_IMAGE_SWOOP_MOBILE_NAV_HOVER_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="pagination" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_PAGINATION" description="MOD_IMAGE_SWOOP_PAGINATION_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>					
+
+					<field name="playPause" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_PLAY_PAUSE" description="MOD_IMAGE_SWOOP_PLAY_PAUSE_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="pauseOnClick" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_PAUSE_ON_CLICK" description="MOD_IMAGE_SWOOP_PAUSE_ON_CLICK_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+					<field name="thumbnails" type="radio" class="btn-group" default="false" label="MOD_IMAGE_SWOOP_THUMBNAILS" description="MOD_IMAGE_SWOOP_THUMBNAILS_DESC">
+						<option value="true">true</option>
+						<option value="false">false</option>
+					</field>
+
+
+				<field type="spacer"/>
+				<field name="" type="spacer" label="MOD_IMAGE_SWOOP_CAPTION" description=""/>
+
+				<field name="show_caption" type="radio" class="btn-group" default="1" label="MOD_IMAGE_SWOOP_SHOW_CAPTION" description="MOD_IMAGE_SWOOP_SHOW_CAPTION_DESC">
+						<option value="1">true</option>
+						<option value="0">false</option>
+					</field>
+
+				<field name="captionEffect" type="list" default="fadeIn" label="MOD_IMAGE_SWOOP_CAPTION_EFFECT" description="MOD_IMAGE_SWOOP_CAPTION_EFFECT_DESC">
+						<option value="moveFromLeft">moveFromLeft</option>
+						<option value="moveFomRight">moveFomRight</option>
+						<option value="moveFromTop">moveFromTop</option>
+						<option value="moveFromBottom">moveFromBottom</option>
+						<option value="fadeIn">fadeIn</option>
+						<option value="fadeFromLeft">fadeFromLeft</option>
+						<option value="fadeFromRight">fadeFromRight</option>
+						<option value="fadeFromTop">fadeFromTop</option>
+						<option value="fadeFromBottom">fadeFromBottom</option>
+					</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

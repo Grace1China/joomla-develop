@@ -1,0 +1,39 @@
+/**
+ * Torbara Maxx-Fitness Template for Joomla, exclusively on Envato Market: http://themeforest.net/user/torbara
+ * @encoding     UTF-8
+ * @version      1.0
+ * @copyright    Copyright (C) 2015 Torbara (http://torbara.com). All rights reserved.
+ * @license      GNU General Public License version 2 or later, see http://www.gnu.org/licenses/gpl-2.0.html
+ * @author       Alexandr Khmelnytsky (support@torbara.com)
+ */
+
+.akslider-module .uk-dotnav > li > a {
+    width: 55px;
+    height: 55px;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    position: relative;
+/* Uncomment this if you want gray effect for thumbs */
+/*    filter: gray;  IE6-9 
+    -webkit-filter: grayscale(100%);  Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.akslider-module .uk-dotnav > li:hover > a {
+    opacity: 0.9;
+/* Uncomment this if you want gray effect for thumbs */
+/*    filter: none;  IE6-9 
+    -webkit-filter: grayscale(0%);*/
+}
+
+.akslider-module .uk-dotnav > li.uk-active > a {
+    opacity: 1;
+    border: 3px solid rgba(0, 0, 0, 0.6);
+/* Uncomment this if you want gray effect for thumbs */
+/*    filter: none;  IE6-9 
+    -webkit-filter: grayscale(0%);*/
+}
+
+.akslider-module iframe {
+    pointer-events: none !important;
+}

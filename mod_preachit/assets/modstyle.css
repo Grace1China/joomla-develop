@@ -1,0 +1,47 @@
+/* CSS for latest module */
+
+.clr {
+    clear: both;
+}
+
+/* Default view */
+
+.moddefault .date {font-size: 12px;}
+
+.moddefault .studyname {font-size: 12px;}
+
+.moddefault .scripture {font-size: 12px;}
+
+.moddefault .teacher {font-size: 12px;}
+
+.moddefault .series {font-size: 12px;}
+
+.moddefault .medialinks {padding: 0; }
+
+.moddefault .videolink a:link {color: #ffffff; background-color: #000000;  margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .videolink a:visited {color: #ffffff; background-color: #000000; margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .videolink a:hover {color: #000000; background-color: #999999; margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .audiolink a:link {color: #ffffff; background-color: #000000;  margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .audiolink a:visited {color: #ffffff; background-color: #000000;  margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .audiolink a:hover {color: #000000; background-color: #999999;  margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .textlink a:link {color: #ffffff; background-color: #000000;  margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .textlink a:visited {color: #ffffff; background-color: #000000;  margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .textlink a:hover {color: #000000; background-color: #999999;  margin-left: 10px; padding: 5px 10px 5px 10px; text-decoration: none; border-radius: 8px; -moz-border-radius:8px; }
+
+.moddefault .seriesimage {margin: 5px 10px 5px 5px; position: relative; border: 1px solid #D5D5D5; padding: 4px; background: transparent; float: left; width: 50px;}
+
+.moddefault .teacherimage {margin: 5px 10px 5px 5px; position: relative; border: 1px solid #D5D5D5; padding: 4px; background: transparent; float: left; width: 50px;}
+
+.moddefault .messageimage {margin: 5px 10px 5px 5px; position: relative; border: 1px solid #D5D5D5; padding: 4px; background: transparent; float: left; width: 50px;}
+
+.moddefault .showall {margin-top: 10px;}
+
+.moddefault .showall a {font-size: 80%;}

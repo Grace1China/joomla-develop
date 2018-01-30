@@ -1,0 +1,11 @@
+/* CSS for piteachers module */
+
+.clr {clear: both;}
+
+/* Default view */
+
+.modtdefault .teachername {font-size:12px;}
+.modtdefault .tdescription {font-size: 12px;}
+.modtdefault .teacherimage {margin: 5px 10px 5px 5px; position: relative; border: 1px solid #D5D5D5; padding: 4px; background: transparent; float: left;}
+.modtdefault .showall {margin-top: 10px;}
+.modtdefault .showall a {font-size: 80%;}

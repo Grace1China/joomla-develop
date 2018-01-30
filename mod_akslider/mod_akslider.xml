@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Torbara Maxx-Fitness Template for Joomla, exclusively on Envato Market: http://themeforest.net/user/torbara
+ * @encoding     UTF-8
+ * @version      1.0
+ * @copyright    Copyright (C) 2015 Torbara (http://torbara.com). All rights reserved.
+ * @license      GNU General Public License version 2 or later, see http://www.gnu.org/licenses/gpl-2.0.html
+ * @author       Alexandr Khmelnytsky (support@torbara.com)
+ */
+-->
+<extension type="module" version="3.0" method="upgrade" client="">
+    <name>MOD_AKSLIDER</name>
+    <creationDate>Feb 2015</creationDate>
+    <author>Alexander Khmelnitskiy</author>
+    <authorEmail>support@aklare.com</authorEmail>
+    <authorUrl>http://aklare.com</authorUrl>
+    <copyright>Copyright © 2015 - All rights reserved.</copyright>
+    <license>GNU General Public License v2.0</license>
+    <version>1.0</version>
+    <description>MOD_AKSLIDER_DESC</description>
+    <files>
+        <filename module="mod_akslider">mod_akslider.php</filename>
+        <filename>mod_akslider.xml</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>languages</folder>
+        <folder>tmpl</folder>
+        <folder>css</folder>
+        <folder>js</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="filtering" label="MOD_AKSLIDER_FIELD_GROUP_FILTERING_LABEL">
+                <field name="show_front" type="list" default="show" label="MOD_AKSLIDER_FIELD_SHOWFEATURED_LABEL" description="MOD_AKSLIDER_FIELD_SHOWFEATURED_DESC">
+                    <option value="show">JSHOW</option>
+                    <option value="hide">JHIDE</option>
+                    <option value="only">MOD_AKSLIDER_OPTION_ONLYFEATURED_VALUE</option>
+                </field>
+                <field name="count" type="text" default="0" label="MOD_AKSLIDER_FIELD_COUNT_LABEL" description="MOD_AKSLIDER_FIELD_COUNT_DESC" />
+                <field name="filteringspacer1" type="spacer" hr="true" />
+
+                <field name="category_filtering_type" type="list" default="1" label="MOD_AKSLIDER_FIELD_CATFILTERINGTYPE_LABEL" description="MOD_AKSLIDER_FIELD_CATFILTERINGTYPE_DESC">
+                        <option value="1">MOD_AKSLIDER_OPTION_INCLUSIVE_VALUE</option>
+                        <option value="0">MOD_AKSLIDER_OPTION_EXCLUSIVE_VALUE</option>
+                </field>
+
+                <field name="catid" type="category" extension="com_content" multiple="true" size="5" label="JCATEGORY" description="MOD_AKSLIDER_FIELD_CATEGORY_DESC">
+                        <option value="">JOPTION_ALL_CATEGORIES</option>
+                </field>
+
+                    <field
+                            name="show_child_category_articles"
+                            type="list"
+                            default="0"
+                            label="MOD_AKSLIDER_FIELD_SHOWCHILDCATEGORYARTICLES_LABEL"
+                            description="MOD_AKSLIDER_FIELD_SHOWCHILDCATEGORYARTICLES_DESC"
+                    >
+                            <option value="1">MOD_AKSLIDER_OPTION_INCLUDE_VALUE</option>
+                            <option value="0">MOD_AKSLIDER_OPTION_EXCLUDE_VALUE</option>
+                    </field>
+
+                    <field
+                            name="levels"
+                            type="text"
+                            default="1"
+                            label="MOD_AKSLIDER_FIELD_CATDEPTH_LABEL"
+                            description="MOD_AKSLIDER_FIELD_CATDEPTH_DESC" />
+
+                    <field
+                            name="filteringspacer2"
+                            type="spacer"
+                            hr="true" />
+
+                    <field
+                            name="author_filtering_type"
+                            type="list"
+                            default="1"
+                            label="MOD_AKSLIDER_FIELD_AUTHORFILTERING_LABEL"
+                            description="MOD_AKSLIDER_FIELD_AUTHORFILTERING_DESC"
+                    >
+                            <option value="1">MOD_AKSLIDER_OPTION_INCLUSIVE_VALUE</option>
+                            <option value="0">MOD_AKSLIDER_OPTION_EXCLUSIVE_VALUE</option>
+                    </field>
+
+                    <field
+                            name="created_by"
+                            type="sql"
+                            multiple="true" size="5"
+                            label="MOD_AKSLIDER_FIELD_AUTHOR_LABEL"
+                            description="MOD_AKSLIDER_FIELD_AUTHOR_DESC"
+                            query="select id, name, username from #__users where id IN (select distinct(created_by) from #__content) order by name ASC"
+                            key_field="id" value_field="name"
+                    >
+                            <option value="">JOPTION_SELECT_AUTHORS</option>
+                    </field>
+
+                    <field
+                            name="filteringspacer3"
+                            type="spacer"
+                            hr="true" />
+
+                    <field
+                            name="author_alias_filtering_type"
+                            type="list"
+                            default="1"
+                            label="MOD_AKSLIDER_FIELD_AUTHORALIASFILTERING_LABEL"
+                            description="MOD_AKSLIDER_FIELD_AUTHORALIASFILTERING_DESC"
+                    >
+                            <option value="1">MOD_AKSLIDER_OPTION_INCLUSIVE_VALUE</option>
+                            <option value="0">MOD_AKSLIDER_OPTION_EXCLUSIVE_VALUE</option>
+                    </field>
+
+                    <field
+                            name="created_by_alias"
+                            type="sql"
+                            multiple="true" size="5"
+                            label="MOD_AKSLIDER_FIELD_AUTHORALIAS_LABEL"
+                            description="MOD_AKSLIDER_FIELD_AUTHORALIAS_DESC"
+                            query="select distinct(created_by_alias) from #__content where created_by_alias != '' order by created_by_alias ASC"
+                            key_field="created_by_alias"
+                            value_field="created_by_alias"
+                    >
+                            <option value="">JOPTION_SELECT_AUTHOR_ALIASES</option>
+                    </field>
+
+                    <field	
+                            name="filteringspacer4"
+                            type="spacer"
+                            hr="true" />
+
+                    <field
+                            name="excluded_articles"
+                            type="textarea"
+                            cols="10"
+                            rows="3"
+                            label="MOD_AKSLIDER_FIELD_EXCLUDEDARTICLES_LABEL"
+                            description="MOD_AKSLIDER_FIELD_EXCLUDEDARTICLES_DESC" />
+
+                    <field
+                            name="filteringspacer5"
+                            type="spacer"
+                            hr="true" />
+
+                    <field
+                            name="filteringspacer6"
+                            type="spacer"
+                            hr="true" />
+
+                    <field
+                            name="date_filtering"
+                            type="list"
+                            default="off"
+                            label="MOD_AKSLIDER_FIELD_DATEFILTERING_LABEL"
+                            description="MOD_AKSLIDER_FIELD_DATEFILTERING_DESC"
+                    >
+                            <option value="off">MOD_AKSLIDER_OPTION_OFF_VALUE</option>
+                            <option value="range">MOD_AKSLIDER_OPTION_DATERANGE_VALUE</option>
+                            <option value="relative">MOD_AKSLIDER_OPTION_RELATIVEDAY_VALUE</option>
+                    </field>
+
+                    <field
+                            name="date_field"
+                            type="list"
+                            default="a.created"
+                            label="MOD_AKSLIDER_FIELD_DATERANGEFIELD_LABEL"
+                            description="MOD_AKSLIDER_FIELD_DATERANGEFIELD_DESC"
+                    >
+                            <option value="a.created">MOD_AKSLIDER_OPTION_CREATED_VALUE</option>
+                            <option value="a.modified">MOD_AKSLIDER_OPTION_MODIFIED_VALUE</option>
+                            <option value="a.publish_up">MOD_AKSLIDER_OPTION_STARTPUBLISHING_VALUE</option>
+                    </field>
+
+                    <field
+                            name="start_date_range"
+                            type="calendar"
+                            format="%Y-%m-%d %H:%M:%S"
+                            label="MOD_AKSLIDER_FIELD_STARTDATE_LABEL"
+                            description="MOD_AKSLIDER_FIELD_STARTDATE_DESC"
+                            size="22"
+                            filter="user_utc" />
+
+                    <field
+                            name="end_date_range"
+                            type="calendar"
+                            format="%Y-%m-%d %H:%M:%S"
+                            label="MOD_AKSLIDER_FIELD_ENDDATE_LABEL"
+                            description="MOD_AKSLIDER_FIELD_ENDDATE_DESC"
+                            size="22"
+                            filter="user_utc" />
+
+                    <field
+                            name="relative_date"
+                            type="text"
+                            default="30"
+                            label="MOD_AKSLIDER_FIELD_RELATIVEDATE_LABEL"
+                            description="MOD_AKSLIDER_FIELD_RELATIVEDATE_DESC" />
+            </fieldset>
+
+            <fieldset
+                    name="ordering"
+                    label="MOD_AKSLIDER_FIELD_GROUP_ORDERING_LABEL"
+            >
+                    <field
+                            name="article_ordering"
+                            type="list"
+                            default="a.title"
+                            label="MOD_AKSLIDER_FIELD_ARTICLEORDERING_LABEL"
+                            description="MOD_AKSLIDER_FIELD_ARTICLEORDERING_DESC"
+                    >
+                            <option value="a.ordering">MOD_AKSLIDER_OPTION_ORDERING_VALUE</option>
+                            <option value="fp.ordering">MOD_AKSLIDER_OPTION_ORDERINGFEATURED_VALUE</option>
+                            <option value="a.hits">MOD_AKSLIDER_OPTION_HITS_VALUE</option>
+                            <option value="a.title">JGLOBAL_TITLE</option>
+                            <option value="a.id">MOD_AKSLIDER_OPTION_ID_VALUE</option>
+                            <option value="a.alias">JFIELD_ALIAS_LABEL</option>
+                            <option value="a.created">MOD_AKSLIDER_OPTION_CREATED_VALUE</option>
+                            <option value="modified">MOD_AKSLIDER_OPTION_MODIFIED_VALUE</option>
+                            <option value="publish_up">MOD_AKSLIDER_OPTION_STARTPUBLISHING_VALUE</option>
+                            <option value="a.publish_down">MOD_AKSLIDER_OPTION_FINISHPUBLISHING_VALUE</option>
+                    </field>
+
+                    <field
+                            name="article_ordering_direction"
+                            type="list"
+                            default="ASC"
+                            label="MOD_AKSLIDER_FIELD_ARTICLEORDERINGDIR_LABEL"
+                            description="MOD_AKSLIDER_FIELD_ARTICLEORDERINGDIR_DESC"
+                    >
+                            <option value="DESC">MOD_AKSLIDER_OPTION_DESCENDING_VALUE</option>
+                            <option value="ASC">MOD_AKSLIDER_OPTION_ASCENDING_VALUE</option>
+                    </field>
+            </fieldset>
+
+            <fieldset name="display" label="MOD_AKSLIDER_FIELD_GROUP_DISPLAY_LABEL">
+                    <field name="height" type="text" default="350" label="MOD_AKSLIDER_FIELD_HEIGHT_LABEL" description="MOD_AKSLIDER_FIELD_HEIGHT_DESC" />
+                
+                    <field name="slidenav" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_AKSLIDER_FIELD_SLIDENAV_LABEL" description="MOD_AKSLIDER_FIELD_SLIDENAV_DESC">
+                        <option value="1">JYES</option>
+                        <option value="0">JNO</option>
+                    </field>
+
+                    <field name="slidenav_btn" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_AKSLIDER_FIELD_SLIDENAV_BNT_LABEL" description="MOD_AKSLIDER_FIELD_SLIDENAV_BNT_DESC">
+                        <option value="1">JSHOW</option>
+                        <option value="0">JHIDE</option>
+                    </field>
+
+                    <field name="animations" type="list" default="scroll" label="MOD_AKSLIDER_FIELD_ANIMATIONS_LABEL" description="MOD_AKSLIDER_FIELD_ANIMATIONS_DESC">
+                        <option value="fade">MOD_AKSLIDER_FIELD_ANIMATIONS_FADE</option>
+                        <option value="scroll">MOD_AKSLIDER_FIELD_ANIMATIONS_SCROLL</option>
+                        <option value="scale">MOD_AKSLIDER_FIELD_ANIMATIONS_SCALE</option>
+                        <option value="swipe">MOD_AKSLIDER_FIELD_ANIMATIONS_SWIPE</option>
+                        <!--option value="slice-down">MOD_AKSLIDER_FIELD_ANIMATIONS_SLICE_DOWN</option>
+                        <option value="slice-up">MOD_AKSLIDER_FIELD_ANIMATIONS_SLICE_UP</option>
+                        <option value="slice-up-down">MOD_AKSLIDER_FIELD_ANIMATIONS_SLICE_UP_DOWN</option-->
+                        <option value="fold">MOD_AKSLIDER_FIELD_ANIMATIONS_FOLD</option>
+                        <option value="puzzle">MOD_AKSLIDER_FIELD_ANIMATIONS_PUZZLE</option>
+                        <option value="boxes">MOD_AKSLIDER_FIELD_ANIMATIONS_BOXES</option>
+                        <option value="boxes-reverse">MOD_AKSLIDER_FIELD_ANIMATIONS_BOXES_REVERSE</option>
+                        <!--option value="random-fx">MOD_AKSLIDER_FIELD_ANIMATIONS_RANDOM_FX</option-->
+                    </field>
+                    
+                    <field name="duration" type="text" default="500" label="MOD_AKSLIDER_FIELD_DURATION_LABEL" description="MOD_AKSLIDER_FIELD_DURATION_DESC" />
+                    
+                    <field name="autoplay" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_AKSLIDER_FIELD_AUTOPLAY_LABEL" description="MOD_AKSLIDER_FIELD_AUTOPLAY_DESC">
+                        <option value="1">JYES</option>
+                        <option value="0">JNO</option>
+                    </field>
+                    
+                    <field name="autoplayInterval" type="text" default="7000" label="MOD_AKSLIDER_FIELD_AUTOPLAYINTERVAL_LABEL" description="MOD_AKSLIDER_FIELD_AUTOPLAYINTERVAL_DESC" />
+                    
+                    <field name="videoautoplay" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_AKSLIDER_FIELD_VIDEOAUTOPLAY_LABEL" description="MOD_AKSLIDER_FIELD_VIDEOAUTOPLAY_DESC">
+                        <option value="1">JYES</option>
+                        <option value="0">JNO</option>
+                    </field>
+                    
+                    <field name="videomute" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_AKSLIDER_FIELD_VIDEOMUTE_LABEL" description="MOD_AKSLIDER_FIELD_VIDEOMUTE_DESC">
+                        <option value="1">JYES</option>
+                        <option value="0">JNO</option>
+                    </field>
+
+                    <field name="kenburns" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_AKSLIDER_FIELD_KENBURNS_LABEL" description="MOD_AKSLIDER_FIELD_KENBURNS_DESC">
+                        <option value="1">JYES</option>
+                        <option value="0">JNO</option>
+                    </field>
+            </fieldset>
+            <fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="owncache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+            
+        </fields>
+    </config> 
+    <languages folder="languages">
+            <language tag="en-GB">en-GB/en-GB.mod_akslider.sys.ini</language>
+            <language tag="en-GB">en-GB/en-GB.mod_akslider.ini</language>
+    </languages>
+</extension>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.5.0" method="upgrade" client="site">
+	<name>Ohanah Related Info</name>
+	<author>Beyounic SA</author>
+	<creationDate>March 2011</creationDate>
+	<copyright>Copyright (C) 2012 Beyounic SA. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@beyounic.com</authorEmail>
+	<authorUrl>app.ohanah.com</authorUrl>
+	<version>2.3.0</version>
+	<description></description>
+	<files>
+		<filename module="mod_ohanahrelatedinfo">mod_ohanahrelatedinfo.php</filename>
+		<filename>html.php</filename>
+		<filename>translator.php</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic"  addfieldpath="/administrator/components/com_ohanah/models/fields">
+
+				<field name="showWikipedia" type="list" default="1" label="Show Wikipedia link" description="Select whether to show the Wikipedia link">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+
+				<field name="showTripadvisor" type="list" default="1" label="Show Tripadvisor link" description="Select whether to show the Tripadvisor link">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+
+				<field name="showPanoramio" type="list" default="1" label="Show a link to Panoramio" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+
+				<field name="showPanoramioImages" type="list" default="1" label="Show Panoramio pictures" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+
+				<field menu="hide" name="numberOfPicturesFromPanoramio" type="text" default="9" size="4" label="Number of pictures from Panoramio" description="" />
+
+				<field name="@sp0" type="SpacerOnlyInJ3" label="&lt;h3&gt;Visibility in Ohanah&#39;s views&lt;/h3&gt;" description="" class="" />
+				<field name="@sp1" type="SpacerOnlyInJ3" label="Related info module will display some additional info about event based on it's location. It can be used only in single event view. On other view it will hide itself. " description="" />
+
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

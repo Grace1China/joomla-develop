@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.5.0" method="upgrade" client="site">
+	<name>Ohanah Calendar</name>
+	<author>Beyounic SA</author>
+	<creationDate>July 2011</creationDate>
+	<copyright>Copyright (C) 2012 Beyounic SA. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@beyounic.com</authorEmail>
+	<authorUrl>app.ohanah.com</authorUrl>
+	<version>2.3.0</version>
+	<description></description>
+	<files>
+		<filename module="mod_ohanahcalendar">mod_ohanahcalendar.php</filename>
+		<filename>html.php</filename>
+		<filename>translator.php</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_ohanah/models/fields">
+				<field name="allevents" type="list" default="1" label="Show" description="Select whether to show all event or just events from single category">
+					<option value="1">All events</option>
+			    	<option value="0">Single Category</option>
+				</field>
+				<field
+					type="sql"
+					name="eventcatid"
+					label="Category"
+					description="Restrict to single category (In 'Show settings' must be selected 'Single category')"
+					query="SELECT title, ohanah_category_id FROM #__ohanah_categories"
+					key_field="ohanah_category_id" value_field="title">
+					<option value="">Choose category...</option>
+				</field>
+				<field name="width" type="text" default="" size="45" label="Width" description="Width of the calendar, in pixels" />
+				<field name="month" type="text" default="" size="45" label="Month" description="Type the number of a month (1, 2, 12) if you want to show a specific month" />
+				<field name="year" type="text" default="" size="45" label="Year" description="Type a year (2011, 2012) if you want to show a specific year" />
+				<field name="activecalbgcolor" type="text" default="" size="45" label="Highlighted Day BG Color" description="Enter the color to be used for the highlighted days in the calander - use css known color like red, green,... or hexa like #000000 - If empty green will be used as default" />
+				<field name="activecaltextcolor" type="text" default="" size="45" label="Highlighted Day Text Color" description="Enter the color to be used for the highlighted days in the calander - use css known color like red, green,... or hexa like #000000 - If empty black will be used as default" />
+				<field name="prevnext" type="list" default="1" label="Prev-Next Month" description="Select whether to show or hide the previous/next month navigation">
+					<option value="1">Show</option>
+				   <option value="0">Hide</option>
+				</field>
+				<field type="list" name="firstDay" label="First day of week:" description="" default="1">
+					<option value="0">Sunday</option>
+					<option value="1">Monday</option>
+					<option value="6">Saturday</option>
+				</field>
+				<field name="showheader" type="list" default="1" label="Calendar header" description="Select whether to show or hide the calendar header">
+					<option value="1">Show</option>
+				   <option value="0">Hide</option>
+				</field>
+
+				<field name="@sp0" type="SpacerOnlyInJ3" label="&lt;h3&gt;Visibility in Ohanah&#39;s views&lt;/h3&gt;" description="" class="" />
+				<field name="@sp1" type="SpacerOnlyInJ3" label="This option control visibility inside Ohanah&#39;s views.&lt;br&gt;Ohanah calendar can be displayed on any page. Use this to hide it from certain views if needed (for example you can hide calendar from single event view and registration)" description="" />
+				<field name="show_in_events_view" type="ListOnlyInJ3" default="1" label="Show in events list view" description="Select whether to show or hide this module in the events list view"><option value="1">Show</option><option value="0">Hide</option></field>
+				<field name="show_in_event_view" type="ListOnlyInJ3" default="1" label="Show in event view" description="Select whether to show or hide this module in the event view"><option value="1">Show</option><option value="0">Hide</option></field>
+				<field name="show_in_venue_view" type="ListOnlyInJ3" default="1" label="Show in venue view" description="Select whether to show or hide this module in the venue view"><option value="1">Show</option><option value="0">Hide</option></field>
+				<field name="show_in_category_view" type="ListOnlyInJ3" default="1" label="Show in category view" description="Select whether to show or hide this module in the category view"><option value="1">Show</option><option value="0">Hide</option></field>
+				<field name="show_in_registration_view" type="ListOnlyInJ3" default="1" label="Show in event registration view" description="Select whether to show or hide this module in the event registration view"><option value="1">Show</option><option value="0">Hide</option></field>
+			</fieldset>
+
+			<fieldset name="advanced">
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

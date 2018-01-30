@@ -1,0 +1,11 @@
+/* CSS for piseries module */
+
+.clr {clear: both;}
+
+/* Default view */
+
+.modsdefault .seriesname {font-size:12px;}
+.modsdefault .sdescription {font-size: 12px;}
+.modsdefault .seriesimage {margin: 5px 10px 5px 5px; position: relative; border: 1px solid #D5D5D5; padding: 4px; background: transparent; float: left; width: 50px; height: 50px;}
+.modsdefault .showall {margin-top: 10px;}
+.modsdefault .showall a {font-size: 80%;}

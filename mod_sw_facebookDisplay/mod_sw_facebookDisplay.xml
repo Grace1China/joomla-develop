@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>SW Facebook Display</name>
+	<author>Muhammad Riduan</author>
+	<creationDate>October, 2013</creationDate>
+	<copyright>Copyright - Social Widgets</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>admin@socialwidgets.net</authorEmail>
+	<authorUrl>http://socialwidgets.net/</authorUrl>
+	<version>1.1</version>
+	<description>Thanks for installing SW Facebook Display</description> 
+	<files>
+		<folder>tmpl</folder>
+		<filename module="mod_sw_facebookDisplay">mod_sw_facebookDisplay.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_sw_facebookDisplay.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="pageURL"
+					type="text"
+					default="https://www.facebook.com/facebook"
+					label="Facebook Page URL" 
+					description="Facebook Page URL Link will be here" />
+				<field
+					name="connection"
+					type="text"
+					default="10"
+					label="Connections"
+					description="No of Connections you want to show" />
+				<field
+					name="width"
+					type="text"
+					default="292"
+					label="Width"
+					description="Width of your module" />
+				<field
+					name="height"
+					type="text"
+					default="590"
+					label="Height"
+					description="Height of your module" />
+				<field
+					name="streams"
+					type="list"
+					default="true"
+					label="Streams"
+					description="Show Streams or Hide Streams">
+					<option value="true">Show</option>
+					<option value="false">Hide</option>
+				</field>
+				<field
+					name="color_scheme"
+					type="list"
+					default="light"
+					label="Color Scheme"
+					description="Choose Color Scheme - Light and Dark option available">
+					<option value="light">Light</option>
+					<option value="dark">Dark</option>
+				</field>
+				<field
+					name="show_faces"
+					type="list"
+					default="true"
+					label="Show Faces"
+					description="Show Faces - Yes or No">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field
+					name="header"
+					type="list"
+					default="true"
+					label="Header"
+					description="Header - Yes or No">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field
+					name="border"
+					type="list"
+					default="true"
+					label="Border"
+					description="Border - Yes or No">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					default=""
+					label="Module Suffix"
+					description="Module Suffix" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
